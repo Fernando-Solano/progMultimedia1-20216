@@ -1,0 +1,31 @@
+float x = 0;
+float velX = 3;
+float y = 0;
+float velY = 7;
+float diam= 60;
+
+void setup() {
+  size(700, 500); 
+  background(255);
+  surface.setTitle("movimiento"); //titulo del archivo
+  x = diam/2;
+  y = diam/2;
+}
+
+void draw() {
+  background(15); //para quitarle las repeticiones a la figura pero cambia el color del fondo sin modificar el de setup
+  fill(0,0,0,10);
+  rect(0,0,width, height);
+  fill(x,1,y);
+  noStroke();
+  ellipse(x, y, diam, diam);
+  x = x + velX; //movimiento
+  y = y + velY;
+  if (x > width || x < 0){
+  velX = -velX;  
+}
+else if(y > height || y < 0){
+velY = -velY;
+}
+
+}
